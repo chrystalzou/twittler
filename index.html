@@ -12,6 +12,10 @@
         var $body = $('body');
         // $body.html('');
 
+        $("button").click(function() {
+          alert("Hey");
+        })
+
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
