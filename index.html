@@ -6,8 +6,14 @@
         text-align: center;
         font-family: Arial;
       }
+      
       #button {
-      font-size: 25px;
+        font-size: 25px;
+      }
+
+      #tweetbox {
+        border-color: blue;
+        border-width: 5px;
       }
     </style>
     <script src="jquery.js"></script>
@@ -26,7 +32,7 @@
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
+          var $tweet = $('<div id="tweetbox"></div>');
           $tweet.text('@' + tweet.user + ': ' + tweet.message + 'tweeted at: ' + tweet.created_at);
           $tweet.appendTo($body);
           index -= 1;
