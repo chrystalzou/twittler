@@ -22,12 +22,7 @@
       }
 
       $("button").click(function() {
-        generateRandomTweet();
-        var tweet = streams.home[index];
-        var $tweet = $('<div></div>');
-        $tweet.text('@' + tweet.user + ': ' + tweet.message);
-        $tweet.appendTo($body);
-        index -= 1;
+        generateRandomTweet().appendTo($body);
       })
 
       });
