@@ -36,6 +36,21 @@
         // $body.html('');
       showTweets();
 
+      function showUserTweets(twittlerHandler){
+        var userTweets = $("a:contains("+twittlerHandler+")");
+        var userTweetsCount = userTweets.length- 1;
+        $("#tweet_table").empty();
+        var userArray = streams.users[twittlerHandler];
+        for(var i = userTweetsCount; i >= 0; i--){
+          var tweet = userArray[i];
+          var uName = '<span class="user">'+tweet.user+'</span>';
+          var $userName = '<a href="#">'+'@'+ uName +'</a>';
+          var $date = '<span class="date">'+ tweet.created_at +'</span>';
+          var message = '<div class="mes">'+ tweet.message + '</div>';
+          var tr='<tr><td>' + $userName +'</td><td>' + message +'</td><td>' + $date +'</td></tr>';
+          $("#tweet_table").append(tr);
+      }
+
       function showTweets() {
         var index = streams.home.length - 1;
         $("#tweet_table").empty();
@@ -52,7 +67,9 @@
         showTweets();
       })
 
-      });
+
+
+    });
 
     </script>
   </head>
