@@ -58,7 +58,7 @@
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $("<div class='tweetbox'></div>");
-          $tweet.text('@' + tweet.user + ': ' + tweet.message + 'tweeted at: ' + tweet.created_at);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + ' tweeted at: ' + tweet.created_at);
           $("#tweet_table").append($tweet);
           index -= 1;
         }
@@ -68,7 +68,10 @@
         showTweets();
       })
 
-
+      $('#tweet_table').on('click', ".user", function(){
+        var twittlerHandler = $(this).text(); 
+        showUserTweets(twittlerHandler);
+      });
 
     });
 
