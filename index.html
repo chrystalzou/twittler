@@ -61,7 +61,7 @@
           var $userName = '<a href="#">'+'@'+ uName +'</a>';
           var $date = '<span class="date">'+ tweet.created_at +'</span>';
           var message = '<div class="mes">'+ tweet.message + '</div>';
-          var tr = $userName + message + $date;
+          var tr ='<tr><td>' + $userName +'</td><td>' + message +'</td><td>' + $date +'</td></tr>';
           $("#tweet_table").append(tr);
           index -= 1;
         }
