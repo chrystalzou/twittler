@@ -15,8 +15,11 @@
         border: 2px solid black;
         padding: 2px;
       }
-      tr:nth-child(even) {background: #CCC}
-      tr:nth-child(odd) {background: #E4D2BA}
+      
+      div.tweetbox {
+        background-color: blue;
+        padding: 15px;
+      }
     </style>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
@@ -32,7 +35,7 @@
         $("#tweet_table").empty();
         while(index >= 0){
           var tweet = streams.home[index];
-          var $tweet = $("<div id='tweetbox'></div>");
+          var $tweet = $("<div class='tweetbox'></div>");
           $tweet.text('@' + tweet.user + ': ' + tweet.message + 'tweeted at: ' + tweet.created_at);
           $("#tweet_table").append($tweet);
           index -= 1;
