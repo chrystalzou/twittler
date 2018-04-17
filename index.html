@@ -11,7 +11,7 @@
         font-size: 25px;
       }
 
-      #tweetbox {
+      #tweet_table {
         border-color: blue;
         border-width: 5px;
       }
@@ -27,11 +27,12 @@
 
       function showTweets() {
         var index = streams.home.length - 1;
+        $("#tweet_table").empty();
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $("<div id='tweetbox'></div>");
           $tweet.text('@' + tweet.user + ': ' + tweet.message + 'tweeted at: ' + tweet.created_at);
-          $tweet.appendTo($body);
+          $("#tweet_table").append($tweet);
           index -= 1;
         }
       }
@@ -46,5 +47,6 @@
   </head>
   <body>
     <button id="button">Show New Tweets!</button>
+    <table id="tweet_table"></table>
   </body>
 </html>
