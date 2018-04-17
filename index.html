@@ -23,6 +23,7 @@
 
       $("button").click(function() {
         generateRandomTweet();
+        $tweet.text('@' + tweet.user + ': ' + tweet.message);
         $tweet.appendTo($body);
       })
 
