@@ -12,19 +12,20 @@
         var $body = $('body');
         // $body.html('');
 
-      function newTweets() {
+      function showTweets() {
         var index = streams.home.length - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
+          $tweet.text('@' + tweet.user + ': ' + tweet.message + 'tweeted at: ' + tweet.created_at);
           $tweet.appendTo($body);
           index -= 1;
         }
       }
 
       $("button").click(function() {
-        newTweets();
+        showTweets();
+        // show tweets generated since the last time this page was loaded
       })
 
       });
